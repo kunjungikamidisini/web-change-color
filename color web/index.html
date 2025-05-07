@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web background changer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Pilih Warna</div>
+      <div></div>
+      <div class="box">
+        <div class="circle red"></div>
+        <div class="circle blue"></div>
+        <div class="circle green"></div>
+        <div class="circle black"></div>
+      </div>
+      <p>untuk reset warna klik tombol di pojok kiri bawah</p>
+      <h2>website ini dibuat karena saya gabut 😂😊</h2>
+    </div>
+    <div>
+      <button id="resetBtn">RESET WARNA</button>
+    </div>
+    <!-- <script>
+
+      const circles = document.querySelectorAll(".circle");
+      const title = document.getElementById("title");
+      const resetBtn = document.getElementById("resetBtn");
+
+      circles.forEach((circle) => {
+        circle.addEventListener("click", ({ target }) => {
+          const { backgroundColor } = window.getComputedStyle(target);
+          document.body.style.backgroundColor = backgroundColor;
+
+          if (backgroundColor === "rgb(51, 51, 51)") {
+            title.style.color = "white";
+          } else {
+            title.style.color = "black";
+          }
+        });
+      });
+    </script> -->
+    <script>
+      const circles = document.querySelectorAll(".circle");
+      const title = document.getElementById("title");
+      const resetBtn = document.getElementById("resetBtn");
+
+      circles.forEach((circle) => {
+        circle.addEventListener("click", ({ target }) => {
+          const { backgroundColor } = window.getComputedStyle(target);
+          document.body.style.backgroundColor = backgroundColor;
+
+          // Jika warna hitam, ubah teks jadi putih
+          if (backgroundColor === "#333333") {
+            title.style.color = "white";
+          } else {
+            title.style.color = "black";
+          }
+        });
+      });
+
+      // Tombol reset
+      resetBtn.addEventListener("click", () => {
+        document.body.style.backgroundColor = "#ffffff";
+        title.style.color = "black";
+      });
+    </script>
+  </body>
+</html>
